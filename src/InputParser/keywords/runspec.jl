@@ -56,8 +56,7 @@ function parse_keyword!(data, outer_data, units, cfg, f, ::Val{:POLYMER})
 end
 
 function parse_keyword!(data, outer_data, units, cfg, f, ::Val{:TEMP})
-    # Enable thermal setup, retaining TEMP so the simulator can omit pressure
-    # work in the transported energy for the temperature-model formulation.
+    # TEMP uses the same thermal formulation as THERMAL.
     data["THERMAL"] = true
     data["TEMP"] = true
 end
